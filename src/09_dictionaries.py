@@ -52,4 +52,5 @@ print(waypoints[0])
 # YOUR CODE HERE
 
 for i in waypoints:
-    print(i)
+    for key, value in i.items():
+        print(f'{value}')
