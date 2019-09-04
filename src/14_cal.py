@@ -19,6 +19,25 @@ and does the following:
    Then exit the program.
 """
 
+
 import sys
 import calendar
 from datetime import datetime
+
+c = calendar.TextCalendar(calendar.SUNDAY)
+date = datetime.now()
+num = input('Enter month then year seperated by a comma:').split(',')
+y = [int(i) for i in num if len(num) >= 1]
+
+if len(y) >= 2:
+    month = y[0]
+    year = y[1]
+    str = c.formatmonth(year, month, 0, 0)
+    print(str)
+elif len(y) == 1:
+    month = y[0]
+    str = c.formatmonth(date.year, month)
+    print(str)
+elif len(y) == 0:
+    str = c.formatmonth(date.year, date.month)
+    print(str)
